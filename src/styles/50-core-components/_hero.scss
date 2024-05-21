@@ -21,7 +21,11 @@
       content: "";
       position: absolute;
       inset: 0;
-      background-color: rgba(10, 20, 25, 0.9);
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 20, 25, 0.9) 50%,
+        #121725
+      );
       z-index: 1;
     }
   }
