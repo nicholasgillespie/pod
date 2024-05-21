@@ -20,19 +20,33 @@
     grid-row: content;
     z-index: 1;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 850px) {
       grid-column: content-start / span 6;
+    }
+
+    @media screen and (max-width: 600px) {
+      --repel-horizontal-alignment: center;
+      grid-column: content;
+      align-content: flex-start;
     }
 
     nav {
       block-size: calc(var(--font-size-4) + var(--space-l-3xl));
       margin-block-end: auto;
 
+      @media screen and (max-width: 600px) {
+        margin-block: 0;
+      }
+
       a {
         margin-block-start: var(--space-l-3xl);
         block-size: var(--font-size-4);
         display: inline-block;
         border-radius: 2em;
+
+        @media screen and (max-width: 600px) {
+          // margin-block: 0;
+        }
       }
 
       .logo {
@@ -47,6 +61,16 @@
       margin-block-start: auto;
       background-color: var(--color-very-dark-blue);
       padding: var(--space-3xl) var(--space-2xl) 0 0;
+
+      @media screen and (max-width: 600px) {
+        padding-inline: unset;
+        background-color: unset;
+        text-align: center;
+
+        & > * {
+          margin-inline: auto;
+        }
+      }
 
       .icon {
         object-fit: contain;
@@ -69,6 +93,11 @@
     );
     object-fit: cover;
     margin-block-start: clamp(0rem, -8.4375rem + 16.875vi, 6.75rem);
+
+    @media screen and (max-width: 600px) {
+      grid-column: full-width;
+      position: relative;
+    }
   }
 
   .hero__dots {
@@ -79,5 +108,9 @@
     transform: translateY(50%) scale(1.5);
     max-inline-size: 20vw;
     z-index: 1;
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
   }
 }
