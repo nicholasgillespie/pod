@@ -1,0 +1,79 @@
+.hero {
+  --canvas-full-width: minmax(var(--space-gutter), 1fr);
+  --canvas-content: min(
+    100% - (var(--space-gutter) * 2),
+    var(--layout-base-max)
+  );
+
+  min-block-size: min(100vh, 100dvh);
+  margin-block-end: var(--space-3xl);
+  display: grid;
+  grid-template-columns:
+    [full-width-start] var(--canvas-full-width)
+    [content-start] repeat(8, calc(var(--canvas-content) / 8)) [content-end]
+    var(--canvas-full-width) [full-width-end];
+
+  grid-template-rows: [content-start] auto [content-end];
+
+  .hero__content {
+    grid-column: content-start / span 5;
+    grid-row: content;
+    z-index: 1;
+
+    nav {
+      block-size: calc(var(--font-size-4) + var(--space-l-3xl));
+      margin-block-end: auto;
+
+      a {
+        margin-block-start: var(--space-l-3xl);
+        block-size: var(--font-size-4);
+        display: inline-block;
+        border-radius: 2em;
+      }
+
+      .logo {
+        block-size: var(--font-size-4);
+      }
+    }
+
+    .text {
+      --space-flow: 2em;
+      --cluster-flex-wrap: nowrap;
+
+      margin-block-start: auto;
+      background-color: var(--color-very-dark-blue);
+      padding: var(--space-3xl) var(--space-2xl) 0 0;
+
+      .icon {
+        object-fit: contain;
+        block-size: var(--font-size-3);
+        max-inline-size: calc(calc(100% - var(--space-2xl)) / 4);
+      }
+
+      & > div:last-child {
+        --space-flow: 3em;
+      }
+    }
+  }
+
+  .hero__image {
+    grid-column: span 6 / full-width-end;
+    grid-row: content;
+    min-inline-size: 100%;
+    min-block-size: calc(
+      100vh - calc(clamp(0rem, -8.4375rem + 16.875vi, 6.75rem) * 1)
+    );
+    object-fit: cover;
+    margin-block-start: clamp(0rem, -8.4375rem + 16.875vi, 6.75rem);
+  }
+
+  .hero__dots {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-end: 0;
+    transform-origin: right center;
+    transform: translateY(50%) scale(1.5);
+    max-inline-size: 20vw;
+    z-index: 1;
+  }
+}
