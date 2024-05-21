@@ -1,0 +1,71 @@
+@use "../10-functions/theme-accessor" as *;
+
+form {
+  --margin: 5px;
+  position: relative;
+  display: block;
+  max-inline-size: var(--measure);
+  block-size: calc(
+    var(--margin) * 2 + calc(var(--font-size-1) * var(--line-height-flat)) +
+      calc(1em * 2)
+  );
+  font-size: get(font-size, 1);
+
+  .error-message {
+    color: red;
+    padding: 0.5em 0 0 calc(1.5em + var(--margin));
+  }
+
+  input {
+    inline-size: 100%;
+    background-color: get(color, dark-blue-gray);
+    border: solid medium get(color, dark-blue-gray);
+    padding: 1em 1.5em;
+    border-radius: 2em;
+    font-weight: get(font-weight, medium);
+
+    color: get(color, mint-green);
+    padding-inline-end: calc(calc(var(--margin) * 2) + calc(1em * 2) + 14ch);
+    block-size: calc(
+      var(--margin) * 2 + calc(var(--font-size-1) * var(--line-height-flat)) +
+        calc(1em * 2)
+    );
+  }
+
+  button {
+    position: absolute;
+    inset-inline-end: 0;
+    inset-block-start: 0;
+    background-color: get(color, mint-green);
+    color: get(color, very-dark-blue);
+    font-weight: get(font-weight, medium);
+    padding: 0.3em 1em;
+    block-size: 3em;
+    margin: var(--margin);
+    border-radius: 2em;
+    border: solid medium transparent;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #b3ffe2;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    input {
+      padding-inline-end: 1.5em;
+    }
+
+    button {
+      position: static;
+      inline-size: 100%;
+      margin: 0;
+      margin-block-start: 0.75em;
+    }
+
+    .error-message {
+      text-align: center;
+      padding-inline: 0;
+    }
+  }
+}

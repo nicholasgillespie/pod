@@ -20,6 +20,10 @@
     grid-row: content;
     z-index: 1;
 
+    @media screen and (max-width: 800px) {
+      grid-column: content-start / span 6;
+    }
+
     nav {
       block-size: calc(var(--font-size-4) + var(--space-l-3xl));
       margin-block-end: auto;

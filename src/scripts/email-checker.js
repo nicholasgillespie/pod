@@ -13,10 +13,13 @@ const emailChecker = {
 
     if (!email) {
       this.errorMsg.textContent = "Oops! Please add your email";
+      this.errorMsg.classList.add("error-message");
     } else if (!emailRegex.test(email)) {
       this.errorMsg.textContent = "Oops! Please check your email";
+      this.errorMsg.classList.add("error-message");
     } else {
       this.errorMsg.textContent = "";
+      this.errorMsg.classList.remove("error-message");
       console.log("Email:", email);
     }
   },

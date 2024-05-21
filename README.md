@@ -29,5 +29,5 @@ You can find the Pod project repository on [GitHub](https://github.com/nicholasg
 #### Clone the repo
 
 ```bash
-git clone https://github.com/nicholasgillespie/Pod.git
+git clone https://github.com/nicholasgillespie/pod.git
 ```

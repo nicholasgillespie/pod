@@ -92,50 +92,7 @@ b {
 // LIST ELEMENTS
 
 // FORM ELEMENTS
-form {
-  --margin: 5px;
-  position: relative;
-  display: block;
-  max-inline-size: var(--measure);
-  block-size: calc(
-    var(--margin) * 2 + calc(var(--font-size-1) * var(--line-height-flat)) +
-      calc(1em * 2)
-  );
 
-  input {
-    inline-size: 100%;
-    background-color: get(color, dark-blue-gray);
-    border: solid medium get(color, dark-blue-gray);
-    padding: 1em 1.5em;
-    border-radius: 2em;
-    font-weight: get(font-weight, medium);
-    font-size: get(font-size, 1);
-    color: get(color, mint-green);
-    padding-inline-end: calc(calc(var(--margin) * 2) + calc(1em * 2) + 14ch);
-    block-size: calc(
-      var(--margin) * 2 + calc(var(--font-size-1) * var(--line-height-flat)) +
-        calc(1em * 2)
-    );
-  }
-
-  button {
-    position: absolute;
-    inset-inline-end: 0;
-    background-color: get(color, mint-green);
-    color: get(color, very-dark-blue);
-    font-weight: get(font-weight, medium);
-    padding: 0.3em 1em;
-    block-size: calc(100% - var(--margin) * 2);
-    margin: var(--margin);
-    border-radius: 2em;
-    border: solid medium transparent;
-
-    &:hover,
-    &:focus-visible {
-      background-color: #b3ffe2;
-    }
-  }
-}
 // form > * + * {
 //   margin-block-start: var(--flow-space, 1em);
 // }
